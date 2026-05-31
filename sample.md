@@ -16,3 +16,23 @@ Getting smaller...
 ###### This should be h6
 ...and the world no longer looks the same.
 Cool.
+
+## Short quotes
+> be me
+
+> go to hell
+
+> start burning
+
+> casually dies of third degree burns
+
+Well, I guess that's what happens when you go to hell.
+
+## Escaping
+\> no quote here haha
+> DARN IT
+
+## HTML stuff that is basically built-in here
+Here's a random image (made possible with Lorem Picsum): 
+<img src="https://picsum.photos/512">
+(if you're curious, the url is <a href="https://picsum.photos/512">here.</a> Hold up, was that another HTML tag?)
