@@ -28,11 +28,12 @@ Cool.
 
 Well, I guess that's what happens when you go to hell.
 
-## Escaping
+## Escaping (non-HTML stuff)
 \> no quote here haha
 > DARN IT
 
 ## HTML stuff that is basically built-in here
+Note that you can't use the '\' character to escape HTML tags.
 Here's a random image (made possible with Lorem Picsum): 
 <img src="https://picsum.photos/512">
 (if you're curious, the url is <a href="https://picsum.photos/512">here.</a> Hold up, was that another HTML tag?)
