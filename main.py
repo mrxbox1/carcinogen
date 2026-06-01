@@ -1,4 +1,6 @@
-CURRENT_VERSION = "0.1 (2026-05-31)"
+import argparse
+
+CURRENT_VERSION = "0.1.1 (2026-06-01)"
 
 md_sample = open('sample.md', 'r').readlines()
 
@@ -44,6 +46,14 @@ def md_to_html(md_text):
     return final_html
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("file", help="MD file to be converted")
+    parser.add_argument("output", help="HTML output file")
+
+    # some compact spaghetti here....
+    args = parser.parse_args()
+    open(args.output, 'w').write(md_to_html(open(args.file, 'r').readlines()))
+
     # test the functionality of this by putting it in an about:blank page
     # Inspect -> edit HTML ->
-    print(md_to_html(md_sample))
+    # print(md_to_html(md_sample))
