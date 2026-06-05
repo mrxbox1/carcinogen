@@ -1,8 +1,8 @@
 import argparse
 
-CURRENT_VERSION = "0.1.1 (2026-06-01)"
+CURRENT_VERSION = "0.1.2 (2026-06-05)"
 
-md_sample = open('sample.md', 'r').readlines()
+#md_sample = open('sample.md', 'r').readlines()
 
 """
 Converts any MD file into HTML.
