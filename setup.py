@@ -1,8 +1,9 @@
 from setuptools import setup
+from src.carcinogen import carcinogen
 
 setup(
     name='carcinogen',
-    version='0.1.1 (2026-06-01)',
+    version=carcinogen.CURRENT_VERSION,
     description='MD-to-HTML "converter"',
     author='mrxbox1',
     packages=['carcinogen']
