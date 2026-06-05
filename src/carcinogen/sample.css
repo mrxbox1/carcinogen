@@ -1,0 +1,21 @@
+h1 {
+    font-family: helvetica;
+    font-weight: bold;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: arial;
+    font-weight: normal;
+}
+
+p {
+    font-family: "Nimbus Roman";
+    color: rgb(25, 25, 25);
+}
+
+q {
+    font-family: "Nimbus Roman";
+    color: dimgray;
+    text-align: center;
+    display: block;
+}

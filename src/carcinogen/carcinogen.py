@@ -1,6 +1,6 @@
 import argparse
 
-CURRENT_VERSION = "0.1.2 (2026-06-05)"
+CURRENT_VERSION = "0.2.0 (2026-06-05)"
 
 #md_sample = open('sample.md', 'r').readlines()
 
@@ -8,8 +8,9 @@ CURRENT_VERSION = "0.1.2 (2026-06-05)"
 Converts any MD file into HTML.
 Parameter md_text should be a list of lines in the MD file (provided ideally using Python's open('[FILE]', 'r').readlines() function)
 """
-def md_to_html(md_text):
-    final_html = "<!-- Made with Carcinogen " + CURRENT_VERSION + " --><!DOCTYPE html><html><body>"
+def md_to_html(md_text, css_file):
+    final_html = "<!-- Made with Carcinogen " + CURRENT_VERSION + " --><!DOCTYPE html><html>"
+    final_html += '<head><link rel="stylesheet" href="' + css_file + '"></head><body>'
 
     for line in md_text:
 
@@ -49,10 +50,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("file", help="MD file to be converted")
     parser.add_argument("output", help="HTML output file")
+    parser.add_argument("css_file", help="CSS file to be used while converting")
 
     # some compact spaghetti here....
     args = parser.parse_args()
-    open(args.output, 'w').write(md_to_html(open(args.file, 'r').readlines()))
+    open(args.output, 'w').write(md_to_html(open(args.file, 'r').readlines(), args.css_file))
 
     # test the functionality of this by putting it in an about:blank page
     # Inspect -> edit HTML ->
