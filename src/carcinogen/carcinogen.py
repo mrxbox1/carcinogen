@@ -1,7 +1,7 @@
 import argparse
 
 # it's (YYYY-MM-DD) dammit, please remember this, future me
-CURRENT_VERSION = "0.2.1 (2026-06-06)"
+CURRENT_VERSION = "0.2.2 (2026-06-06)"
 
 #md_sample = open('sample.md', 'r').readlines()
 
@@ -13,12 +13,14 @@ def md_to_html(md_text, css_file):
     final_html = "<!-- Made with Carcinogen " + CURRENT_VERSION + " --><!DOCTYPE html><html><head>"
 
     # titles implemented like so:
-    if md_text[0].startswith('@'):
-        final_html += "<title>" + md_text[0][1:] + "</title>"
+    if md_text[0].startswith("@"):
+        final_html += """<title>""" + md_text[0][1:] + """</title>"""
+        md_text.pop(0)
     # and CSS files implemented like so.
     # it's messy, but hey, what can you do?
-    if md_text[1].startswith('@'):
-        css_file = md_text[1][1:]
+    if md_text[0].startswith("@"):
+        css_file = md_text[0][1:]
+        md_text.pop(0)
 
     final_html += '<link rel="stylesheet" href="' + css_file + '"></head><body>'
 

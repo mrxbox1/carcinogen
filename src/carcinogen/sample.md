@@ -1,4 +1,4 @@
-@This should be the title
+@If Python whines about string literals again, I'm literally killing myself
 @sample.css
 # This should be h1
 Hello, world! (Now with extra CSS functionality :D)
