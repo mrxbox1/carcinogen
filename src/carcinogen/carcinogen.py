@@ -1,6 +1,7 @@
 import argparse
 
-CURRENT_VERSION = "0.2.0 (2026-06-05)"
+# it's (YYYY-MM-DD) dammit, please remember this, future me
+CURRENT_VERSION = "0.2.1 (2026-06-06)"
 
 #md_sample = open('sample.md', 'r').readlines()
 
@@ -9,8 +10,17 @@ Converts any MD file into HTML.
 Parameter md_text should be a list of lines in the MD file (provided ideally using Python's open('[FILE]', 'r').readlines() function)
 """
 def md_to_html(md_text, css_file):
-    final_html = "<!-- Made with Carcinogen " + CURRENT_VERSION + " --><!DOCTYPE html><html>"
-    final_html += '<head><link rel="stylesheet" href="' + css_file + '"></head><body>'
+    final_html = "<!-- Made with Carcinogen " + CURRENT_VERSION + " --><!DOCTYPE html><html><head>"
+
+    # titles implemented like so:
+    if md_text[0].startswith('@'):
+        final_html += "<title>" + md_text[0][1:] + "</title>"
+    # and CSS files implemented like so.
+    # it's messy, but hey, what can you do?
+    if md_text[1].startswith('@'):
+        css_file = md_text[1][1:]
+
+    final_html += '<link rel="stylesheet" href="' + css_file + '"></head><body>'
 
     for line in md_text:
 
